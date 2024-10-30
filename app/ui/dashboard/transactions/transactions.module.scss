@@ -1,0 +1,37 @@
+.wrapper{
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 10px;
+    background-color: var(--bgSoft);
+    border-radius: 10px;
+    padding: 20px;
+
+    .title{
+        font-weight: 200;
+        font-size: 24px;
+        color: var(--textSoft);
+    }
+
+    .table{
+        display: grid;
+        grid-auto-flow: row;
+        row-gap: 10px;
+
+        .top{
+            padding: 10px;
+
+            div{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                column-gap: 20px;
+            }
+        }
+
+
+        .cards{
+            display: grid;
+            grid-auto-flow: row;
+            row-gap: 10px;
+        }
+    }
+}

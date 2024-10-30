@@ -1,0 +1,15 @@
+.wrapper{
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 20px;
+    height: 450px;
+    background-color: var(--bgSoft);
+    padding: 20px;
+    border-radius: 10px;
+
+    .title{
+        font-weight: 200;
+        color: var(--textSoft);
+        font-size: 24px;
+    }
+}
