@@ -9,7 +9,7 @@
 
     .content{
         display: grid;
-        grid-template-rows: min-content 1fr min-content;
+        grid-template-rows: repeat(3, min-content);
         row-gap: 20px;
         padding: 20px;
     }

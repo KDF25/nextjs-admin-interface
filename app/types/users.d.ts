@@ -1,7 +1,9 @@
 export interface IUser {
-    name: string;
+    username: string;
     email: string;
-    createdAt: string;  
-    role: string;
-    status: string;
+    createdAt: string; 
+    password: string,
+    img: string,
+    isAdmin: boolean,
+    isActive: boolean,
 }

@@ -1,6 +1,6 @@
 .table{
     display: grid;
-    grid-auto-flow: row;
+    grid-template-rows: repeat(2, min-content);
     row-gap: 20px;
 
     .head{

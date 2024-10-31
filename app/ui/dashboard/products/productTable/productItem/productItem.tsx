@@ -21,9 +21,9 @@ export const ProductItem: FC<ProductItemProps> = ({ product }) => {
         />
         <p>{product.title}</p>
       </div>
-      <span>{product.description}</span>
+      <span>{product.desc}</span>
       <span>$ {product.price.toLocaleString()}</span>
-      <span>{product.createdAt}</span>
+      <span>{new Date(product.createdAt).toLocaleDateString()}</span>
       <span>{product.stock.toLocaleString()}</span>
       <div className={styles.buttons}>
         <button className={`${styles.button} ${styles.view}`}>View</button>

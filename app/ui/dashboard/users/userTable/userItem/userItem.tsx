@@ -1,3 +1,4 @@
+import { roles, status } from "@/app/config";
 import { IUser } from "@/app/types";
 import avatar from "@/public/noavatar.png";
 import Image from "next/image";
@@ -13,25 +14,21 @@ export const UserItem: FC<UserItemProps> = ({ user }) => {
     <div className={styles.wrapper}>
       <div className={styles.name}>
         <Image
-          src={avatar}
+          src={user.img || avatar}
           alt="user"
           width={40}
           height={40}
           className={styles.image}
         />
-        <p>{user.name}</p>
+        <p>{user.username}</p>
       </div>
       <span>{user.email}</span>
-      <span>{user.createdAt}</span>
-      <span>{user.role}</span>
-      <span>{user.status}</span>
+      <span>{new Date(user.createdAt).toLocaleDateString()}</span>
+      <span>{user.isAdmin ? roles.admin : roles.client}</span>
+      <span>{user.isActive ? status.active : status.inactive}</span>
       <div className={styles.buttons}>
-        <button className={`${styles.button} ${styles.view}`}>
-            View
-        </button>
-        <button className={`${styles.button} ${styles.delete}`}>
-            Delete
-        </button>
+        <button className={`${styles.button} ${styles.view}`}>View</button>
+        <button className={`${styles.button} ${styles.delete}`}>Delete</button>
       </div>
     </div>
   );
