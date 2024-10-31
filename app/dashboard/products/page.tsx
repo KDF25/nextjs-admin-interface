@@ -4,9 +4,7 @@ import styles from "@/app/ui/dashboard/products/products.module.scss";
 import Link from "next/link";
 import { FC } from "react";
 
-interface ProductsPageProps {}
-
-const ProductsPage: FC<ProductsPageProps> = () => {
+const ProductsPage: FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>

@@ -1,10 +1,13 @@
+import styles from "@/app/ui/login/login.module.scss";
 import { FC } from "react";
-import styles from "./styles.module.scss";
+import { LoginForm } from "@/app/ui";
 
-interface LoginProps {}
-
-const LoginPage: FC<LoginProps> = () => {
-  return <div>LoginPage</div>;
+const LoginPage: FC = () => {
+  return (
+    <div className={styles.wrapper}>
+      <LoginForm />
+    </div>
+  );
 };
 
 export default LoginPage;

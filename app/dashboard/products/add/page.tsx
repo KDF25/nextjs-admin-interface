@@ -1,9 +1,7 @@
-import { FC } from "react";
 import styles from "@/app/ui/dashboard/products/addProduct/addProduct.module.scss";
+import { FC } from "react";
 
-interface AddProductPageProps {}
-
-const AddProductPage: FC<AddProductPageProps> = () => {
+const AddProductPage: FC = () => {
   return (
     <div className={styles.wrapper}>
       <form className={styles.form}>

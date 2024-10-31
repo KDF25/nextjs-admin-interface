@@ -4,9 +4,7 @@ import styles from "@/app/ui/dashboard/users/users.module.scss";
 import Link from "next/link";
 import { FC } from "react";
 
-interface UsersPageProps {}
-
-const UsersPage: FC<UsersPageProps> = () => {
+const UsersPage: FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>

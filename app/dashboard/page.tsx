@@ -1,10 +1,8 @@
-import { FC } from "react";
-import styles from "@/app/ui/dashboard/dashboard.module.scss";
 import { Card, Chart, Rightbar, Transactions } from "@/app/ui";
+import styles from "@/app/ui/dashboard/dashboard.module.scss";
+import { FC } from "react";
 
-interface DashboardProps {}
-
-const DashboardPage: FC<DashboardProps> = () => {
+const DashboardPage: FC = () => {
   return (
     <div className={styles.page}>
       <div className={styles.main}>

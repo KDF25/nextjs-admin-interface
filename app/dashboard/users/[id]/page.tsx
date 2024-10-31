@@ -1,24 +1,22 @@
-import { FC } from "react";
 import styles from "@/app/ui/dashboard/users/userId/userId.module.scss";
-import Image from "next/image";
 import avatar from "@/public/noavatar.png";
+import Image from "next/image";
+import { FC } from "react";
 
-interface UserIdPageProps {}
-
-const UserIdPage: FC<UserIdPageProps> = () => {
+const UserIdPage: FC = () => {
   //   const { id } = params;
   //   const user = await fetchUser(id);
   const user = {
     id: "123456",
     username: "john_doe",
     email: "john.doe@example.com",
-    password: "password123",  
+    password: "password123",
     phone: "+123456789",
     address: "123 Main St, Springfield",
-    img: "", 
+    img: "",
     isAdmin: false,
     isActive: true,
-};
+  };
 
   return (
     <div className={styles.wrapper}>
