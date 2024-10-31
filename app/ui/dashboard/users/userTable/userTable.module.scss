@@ -1,0 +1,16 @@
+.table{
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 20px;
+
+    .head{
+        display: grid;
+        grid-template-columns: 1.5fr 2fr repeat(4, 1fr);
+        column-gap: 10px;
+    }
+
+    .body{
+        display: grid;
+        grid-auto-flow: row;
+    }
+}

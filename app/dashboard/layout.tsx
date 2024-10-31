@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react";
 import styles from "../ui/dashboard/dashboard.module.scss";
-import { Navbar, Sidebar } from "@/app/ui";
+import { Footer, Navbar, Sidebar } from "@/app/ui";
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +15,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <div className={styles.content}>
         <Navbar />
         {children}
+        <Footer />
       </div>
     </div>
   );

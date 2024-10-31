@@ -1,16 +1,24 @@
-import {FC} from 'react';
-import styles from './styles.module.scss'
+import { paths, productsData } from "@/app/config";
+import { Pagination, ProductTable, Search } from "@/app/ui";
+import styles from "@/app/ui/dashboard/products/products.module.scss";
+import Link from "next/link";
+import { FC } from "react";
 
-interface ProductsPageProps {
-}
+interface ProductsPageProps {}
 
 const ProductsPage: FC<ProductsPageProps> = () => {
-
-    return (
-        <div>
-            ProductsPage
-        </div>
-    );
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.top}>
+        <Search placeholder="Search for a product..." />
+        <Link href={paths.productsAdd}>
+          <button className={styles.button}>Add New</button>
+        </Link>
+      </div>
+      <ProductTable products={productsData} />
+      <Pagination />
+    </div>
+  );
 };
 
-export default ProductsPage
+export default ProductsPage;

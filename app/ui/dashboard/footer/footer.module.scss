@@ -1,0 +1,17 @@
+.wrapper{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    color: var(--textSoft);
+
+    .logo{
+        font-weight: bold;
+    }
+
+    .text{
+        font-size: 12px;
+    }
+}
