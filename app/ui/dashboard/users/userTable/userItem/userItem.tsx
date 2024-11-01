@@ -1,7 +1,9 @@
-import { roles, status } from "@/app/config";
+import { paths, roles, status } from "@/app/config";
+import { deleteUser } from "@/app/lib";
 import { IUser } from "@/app/types";
 import avatar from "@/public/noavatar.png";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import styles from "./userItem.module.scss";
 
@@ -27,8 +29,15 @@ export const UserItem: FC<UserItemProps> = ({ user }) => {
       <span>{user.isAdmin ? roles.admin : roles.client}</span>
       <span>{user.isActive ? status.active : status.inactive}</span>
       <div className={styles.buttons}>
+        <Link href={paths.users + "/" + user.id}>
         <button className={`${styles.button} ${styles.view}`}>View</button>
-        <button className={`${styles.button} ${styles.delete}`}>Delete</button>
+        </Link>
+        <form action={deleteUser}>
+          <input type="hidden" name="id" value={user.id}/>
+          <button className={`${styles.button} ${styles.delete}`}>
+            Delete
+          </button>
+        </form>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 export enum paths{
+    login = "/login",
     dashboard = "/dashboard",
     users = "/dashboard/users",
     products = "/dashboard/products",

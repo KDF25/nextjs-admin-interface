@@ -1,22 +1,16 @@
+import { fetchUser, updateUser } from "@/app/lib";
 import styles from "@/app/ui/dashboard/users/userId/userId.module.scss";
 import avatar from "@/public/noavatar.png";
 import Image from "next/image";
 import { FC } from "react";
 
-const UserIdPage: FC = () => {
-  //   const { id } = params;
-  //   const user = await fetchUser(id);
-  const user = {
-    id: "123456",
-    username: "john_doe",
-    email: "john.doe@example.com",
-    password: "password123",
-    phone: "+123456789",
-    address: "123 Main St, Springfield",
-    img: "",
-    isAdmin: false,
-    isActive: true,
-  };
+interface UserIdPageProps {
+  params: { id: string };
+}
+
+const UserIdPage: FC<UserIdPageProps> = async ({ params }) => {
+  const { id } = params;
+  const user = await fetchUser(id);
 
   return (
     <div className={styles.wrapper}>
@@ -27,7 +21,7 @@ const UserIdPage: FC = () => {
         {user.username}
       </div>
       <div className={styles.formContainer}>
-        <form className={styles.form}>
+        <form action={updateUser} className={styles.form}>
           <input type="hidden" name="id" value={user.id} />
           <label>Username</label>
           <input type="text" name="username" placeholder={user.username} />

@@ -1,9 +1,11 @@
+import { addUser } from "@/app/lib";
 import styles from "@/app/ui/dashboard/users/addUser/addUser.module.scss";
+import { FC } from "react";
 
-const AddUserPage = () => {
+const AddUserPage: FC = () => {
   return (
     <div className={styles.wrapper}>
-      <form className={styles.form}>
+      <form action={addUser} className={styles.form}>
         <input type="text" placeholder="username" name="username" required />
         <input type="email" placeholder="email" name="email" required />
         <input

@@ -130,7 +130,7 @@ export const usersData = [
 ];
 
 
-export const productsData: IProduct[] = [
+export const productsData = [
   {
       title: "Samsung Galaxy S21 Smartphone",
       desc: "6.2-inch display, 8GB RAM, 128GB storage, triple camera",

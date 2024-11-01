@@ -1,6 +1,9 @@
+import { paths } from "@/app/config";
+import { deleteProduct } from "@/app/lib";
 import { IProduct } from "@/app/types";
-import avatar from "@/public/noavatar.png";
+import avatar from "@/public/noproduct.jpg";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import styles from "./productItem.module.scss";
 
@@ -26,8 +29,15 @@ export const ProductItem: FC<ProductItemProps> = ({ product }) => {
       <span>{new Date(product.createdAt).toLocaleDateString()}</span>
       <span>{product.stock.toLocaleString()}</span>
       <div className={styles.buttons}>
-        <button className={`${styles.button} ${styles.view}`}>View</button>
-        <button className={`${styles.button} ${styles.delete}`}>Delete</button>
+        <Link href={paths.products + "/" + product.id}>
+          <button className={`${styles.button} ${styles.view}`}>View</button>
+        </Link>
+        <form action={deleteProduct}>
+          <input type="hidden" name="id" value={product.id} />
+          <button className={`${styles.button} ${styles.delete}`}>
+            Delete
+          </button>
+        </form>
       </div>
     </div>
   );

@@ -6,9 +6,7 @@ import { MdLogout } from "react-icons/md";
 import { MenuLink } from "./menuLink";
 import styles from "./sidebar.module.scss";
 
-interface SidebarProps {}
-
-export const Sidebar: FC<SidebarProps> = () => {
+export const Sidebar: FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.user}>
